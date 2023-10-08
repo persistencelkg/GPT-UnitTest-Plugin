@@ -1,0 +1,97 @@
+'''
+private static int getSum(char[] iArr, int n) {
+        if (n > 10 ||  n < 0) {
+            return 0;
+        }
+        boolean tet = tet(n);
+        if (!tet) {
+            return -1;
+        }
+        int iSum = 0;
+        for (int i = 0; i < iArr.length; i++) {
+            iSum += Integer.parseInt(String.valueOf(iArr[i]));
+        }
+        return iSum;
+    }
+
+The follow is `tet(int n)` method body:
+public static boolean tet(int n) {
+        return isHot(LocalDateTime.now().minusYears(n));
+    }
+
+The follow is `isHot(LocalDateTime timeLine)` method body:
+public static boolean isHot(LocalDateTime timeLine) {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime hotStart = now.minusYears(2);
+        // 热 cur: 202207  timeline:202008
+        if (timeLine.getYear() > hotStart.getYear()) {
+            return true;
+        }
+        // cur: 202207  timeline:202007 | 202008 ⬆
+        return timeLine.getYear() == hotStart.getYear() && timeLine.getMonthValue() > hotStart.getMonthValue();
+        // 冷 [ES未来走扩容｜归档策略，不再继续划分冷热]
+    }
+
+
+'''
+
+## 场景1:组合覆盖
+### 用例1: 测试getSum方法当iArr和n都为正常值时的情况
+- 输入：char[] iArr = {'1', '2', '3'}; int n = 1;
+- 计算步骤:
+      1. iSum += 1
+      2. iSum += 2
+      3. iSum += 3
+      4. 最终iSum = 6结束循环;
+- 输出：6
+- 描述：当输入的字符数组iArr中的元素都可以转换为整数，并且n小于等于2时，方法返回iArr中所有元素转换为整数后的和。
+
+### 用例2:测试getSum方法当n大于2时的情况
+- 输入：char[] iArr = {'1', '2', '3'}; int n = 3;
+- 输出：-1
+- 描述：当n大于2时，方法返回-1。
+
+### 用例3：测试getSum方法当iArr为空数组时的情况
+- 输入：char[] iArr = {}; int n = 1;
+- 输出：0
+- 描述：当输入的字符数组iArr为空数组时，方法返回0。
+
+## 场景2: 边界分析
+### 用例1:
+- 输入: iArr = {'1', '2', '3'}, n = 11
+- 输出: 0
+- 描述: 此用例测试了n大于10的情况。
+
+### 用例2:
+- 输入: iArr = {'1', '2', '3'}, n = -1
+- 输出: 0
+- 描述: 此用例测试了n小于0的情况。
+
+## 场景2: 测试getSum方法的边界分析
+### 用例3:
+- 输入: iArr = {'1', '2', '3'}, n = 0
+- 输出: 6
+- 描述: 此用例测试了n等于0的情况。
+
+### 用例4:
+- 输入: iArr = {'1', '2', '3'}, n = 10
+- 输出: 6
+- 描述: 此用例测试了n等于10的情况。
+
+
+## 场景3:异常处理
+### 用例1：测试getSum方法当iArr中存在无法转换为整数的元素时的情况
+- 输入：char[] iArr = {'1', 'a', '3'}; int n = 1;
+- 输出：<Err>NumberFormatException</Err>
+- 描述：当输入的字符数组iArr中存在无法转换为整数的元素时，方法会抛出NumberFormatException异常。
+
+
+### 用例2: 测试getSum方法当iArr为null时的情况
+- 输入：char[] iArr = null; int n = 1;
+- 输出：<Err>NullPointerException</Err>
+- 描述: 使用时没有对iArr的进行空判断，方法会出现NullPointerException
+
+
+'''
+
+'''

@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+    id 'idea'
+    // 依赖gradle-intellij-plugin插件：负责插件项目的配置、测试和发布
+    id 'org.jetbrains.intellij' version '0.4.6'
+}
+
+//apply plugin: 'idea'
+//apply plugin: 'org.jetbrains.intellij'
+//apply plugin: 'java'
+
+
+group = 'org.lkg'
+version = 'v3.3.5.Release'
+
+//sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url("https://maven.aliyun.com/repository/public")
+    }
+    maven {
+        url("https://maven.aliyun.com/repository/spring")
+
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // IDEA 插件开发的依赖库
+
+    // 引入依赖
+    implementation("org.springframework:spring-web:4.3.9.RELEASE")
+    implementation("org.apache.httpcomponents:httpclient:4.5.2")
+    // debug 需要打开
+//    implementation("com.fasterxml.jackson.core:jackson-databind:2.8.9")
+    implementation("com.alibaba:fastjson:1.2.78")
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    // type使用哪个类型IDE 默认 IC 即社区版
+    version = '2019.3'
+    updateSinceUntilBuild = false
+    plugins = ['java']
+}
+
+patchPluginXml {
+    // 如果没有指定默认和intellij.version 相同
+    sinceBuild = '193'
+    untilBuild = '233.*'
+
+    changeNotes = """
+      v1.0 满足基本功能：单元测试穷举<br>
+      v1.1 添加进度条功能.修复已知的bug<br>
+      v1.2 向上兼容，目前最低要求IDE: 2019.3.x版本及其以上<br>
+      v1.3 定制化模型<br>
+      v1.4 一些bugfix<br>
+      v1.5 使用Azure Open AI模型<br>
+      v2.0.1 区分http和https双通道【强升版本】<br>
+      v2.0.2 采用结构化prompt，增强模型的输出<br>
+      v2.1.0 优化prompt暴露的问题，精简了一些代码<br>
+      v2.1.5 增加对全局常量的识别，变量还无法支持<br>
+      v2.2.5 增加对项目范围的常量、变量识别；提升计算类程序准确率到90%<br>
+      v3.0.0 具备可推广能力.<br>
+      v3.1.0 提供集成测试能力<br>
+      V3.1.5 单测用例覆盖率95%，准确率95%<br>
+      v3.2.0 提供双通道，集成测试用例覆盖率85%<br>
+      v3.2.5 修复识别object方法和无用方法<br>
+      v3.3.0 修复返回值为void的控制值识别问题<br>
+      v3.3.5 优化了界面UI和说明文档<br>
+      <br>
+      """
+}
