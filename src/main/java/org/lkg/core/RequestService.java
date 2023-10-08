@@ -30,9 +30,8 @@ import java.util.logging.Logger;
 public class RequestService {
 
     private static final Logger log = Logger.getLogger(RequestService.class.getSimpleName());
-    //qjiB7WlA5UEtFlMjFLwHT3BlbkFJU69J7dboJBX6N2La7Lzp  dG4Iw5d6BA4xhvZS0h2eT3BlbkFJSU8Ov67L1E4cQkSW9jvX
     @Deprecated
-    private static final String key = "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";
+    private static final String key = "";
 
     //已过期
     @Deprecated
@@ -43,12 +42,12 @@ public class RequestService {
     /**
      * https
      */
-    private static final String PUBLIC_URL = "https://106.75.240.103:5001/chat";
+    private static final String PUBLIC_URL = "";
 
     /**
      * http方式
      */
-    private static final String HTTP_PUBLIC_URL = "http://106.75.240.103:5000/chat";
+    private static final String HTTP_PUBLIC_URL = "";
 
     /**
      * V1.0

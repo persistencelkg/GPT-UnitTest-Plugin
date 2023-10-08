@@ -2,31 +2,31 @@
     <id>org.lkg.open-case-for19plus</id>
     <name>GPT用例插件</name>
     <vendor email="18634185909@163.com" url="http://www.w.com"/>
-    <description><![CDATA[
-<html>
-  <body>
+<!--    <description><![CDATA[-->
+<!--<html>-->
+<!--  <body>-->
 
-    <p>基于自然语言和GPT大模型能力为用户编写的代码提供详尽的用例集合和结果；提升coder的自测效率，响应速度最快15秒，最慢60秒</p>
-    <hr>
-    <p>    插件使用流程：</p>
-    <br>
-    <ul>
-        <li>
-        1.当前类方法测试，需要直接从方法修饰符如public xxx 开始选中到方法参数结尾<br/>
-        <img border="0" src="/img/1.png">
-        </li>
-        <li>2.调用其他方法，直接选中方法名右键生成即可<br/>
-         <img border="0" src="./img/2.png">
-        </li>
-    <ul/>
-    <br>
-    <p style='color:red;'>右键生成过程中，如果最下方出现进度条便可以使用，如果等待很长都没有出现，可能存在异常请及时联系LKG</p>
-    <div style="position: absolute; bottom: 0; width: 100%; height: 30px; background-color: #333; color: #fff; text-align: center;">
-        <h5 style="font-size: 14px; line-height: 50px; margin: 0;" class="copyright">Copyright © 2023. made by likaiguang in user develop of platform C</h5>
-    </div>
-    </body>
-</html>
-]]></description>
+<!--    <p>基于自然语言和GPT大模型能力为用户编写的代码提供详尽的用例集合和结果；提升coder的自测效率，响应速度最快15秒，最慢60秒</p>-->
+<!--    <hr>-->
+<!--    <p>    插件使用流程：</p>-->
+<!--    <br>-->
+<!--    <ul>-->
+<!--        <li>-->
+<!--        1.当前类方法测试，需要直接从方法修饰符如public xxx 开始选中到方法参数结尾<br/>-->
+<!--        <img border="0" src="/img/1.png">-->
+<!--        </li>-->
+<!--        <li>2.调用其他方法，直接选中方法名右键生成即可<br/>-->
+<!--         <img border="0" src="./img/2.png">-->
+<!--        </li>-->
+<!--    <ul/>-->
+<!--    <br>-->
+<!--    <p style='color:red;'>右键生成过程中，如果最下方出现进度条便可以使用，如果等待很长都没有出现，可能存在异常请及时联系LKG</p>-->
+<!--    <div style="position: absolute; bottom: 0; width: 100%; height: 30px; background-color: #333; color: #fff; text-align: center;">-->
+<!--        <h5 style="font-size: 14px; line-height: 50px; margin: 0;" class="copyright">Copyright © 2023. made by likaiguang in user develop of platform C</h5>-->
+<!--    </div>-->
+<!--    </body>-->
+<!--</html>-->
+<!--]]></description>-->
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
